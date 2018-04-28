@@ -3,20 +3,43 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const eventSchema = new Schema({
-    date: Date,
-    host: String,
-    address: String, //what kind of data type is needed to work with google maps API
-    book: {
-        title: String,
-        author: String,
-        quote: String,
-        // reviews: url from goodReads
+    date: {
+        type: Date,
+        required: true
     },
+    host: String,
+    address: {
+        type: String,
+        required: true
+        //what kind of data type is needed to work with google maps API
+    },
+    book: {
+        title: {
+            type: String,
+            required: true
+        },
+        author: {
+            type: String,
+            required: true,
+        },
+        quote: {
+            type: String,
+            required: true
+        }
+    }, 
     comments: [{
         date: Date,
         commenter: String,
-        chapter: String,
-        text: String
+        chapter: {
+            type: String,
+            required: true
+        },
+        text: String,
+        // reply: [{
+        //     date: Date,
+        //     commenter: String,
+        //     text: String,
+        // }]
     }]
 })
 

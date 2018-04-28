@@ -96,6 +96,22 @@ eventRouter.route("/:id/edit-comment/:commentId")
             })
         })
     })
+//add reply to a comment
+// eventRouter.route("/:id/reply-to-comment/:commentId/add-reply")
+//     .post((req, res) => {
+//         EventModel.findById(req.params.id, (err, foundEvent) => {
+//             if (err) return res.send(err);
+//             // console.log(foundevent);
+//             foundEvent.comments.id(req.params.commentId, (err, foundComment) => {
+//                 if(err) return res.send(err);
+//                 foundComment.reply.push(req.body);
+//             });//push body of request to reply array
+//             foundEvent.save((err, savedEvent) => {
+//                 if (err) return res.send(err);
+//                 res.status(200).send(savedEvent)
+//             })
+//         })
+//     })
 
 
 module.exports = eventRouter;
