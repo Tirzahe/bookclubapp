@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 
 import eventReducer from "./events";
 
-import{getEvents} from "./events";
+import { getEvents } from "./events";
 
 const globalState = {
     events: eventReducer
@@ -13,6 +13,6 @@ const store = createStore(eventReducer, applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 
-// store.dispatch();
+store.dispatch(getEvents());
 
 export default store;

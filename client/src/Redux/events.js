@@ -5,23 +5,57 @@ import axios from "axios";
 const initialEventState = {
     data: [],
     loading: true,
-    erMsg: ""
+    errMsg: ""
 }
 
 const eventReducer = (state = initialEventState, action) => {
     switch (action.type) {
-        case "GET_EVENTS": {
+        case "GET_EVENTS":
             return {
                 ...state,
                 loading: false,
                 data: action.events
+            };
+        case "DELETE_EVENT":
+            return {
+                ...state,
+                loading: false,
+                data: state.data.filter(event=>{
+                    event._id !== action.id
+                })
             }
-        }
-        //create
-        //edit
-        //delete
+        case "CREATE_EVENT":
+            return {
+                ...state,
+                loading: false,
+                data: [...state.data, action.event]
+            }
+        case "EDIT_EVENT":
+            return {
+                ...state,
+                loading: false,
+                data: state.data.map(event => {
+                    if (event._id === action.id) {
+                        return action.editedEvent
+                    } else {
+                        return event
+                    }
+                })
+            }
         default:
             return state;
+    }
+}
+
+export const createEvent = (inputs) => {
+    return dispatch => {
+        axios.post("/events", inputs)
+            .then(response => {
+                dispatch({
+                    type: "CREATE_EVENT",
+                    event: response.data
+                });
+            })
     }
 }
 
@@ -37,14 +71,45 @@ export const getEvents = () => {
             .catch(err => {
                 dispatch({
                     type: "ERR_MSG",
-                    err: "Data Unavailable"
+                    errMsg: "Data Unavailable"
                 });
             });
     }
 }
 export const deleteEvent = (id) => {
-
-    axios.delete("/events/" + id)
+    return dispatch => {
+        axios.delete("/events/" + id)
+            .then(response => {
+                dispatch({
+                    type: "DELETE_EVENT",
+                    id
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Data Unavailable"
+                });
+            });
+    }
+}
+export const editEvent = (id, inputs) => {
+    return dispatch => {
+        axios.put("/event/" + id, inputs)
+            .then(response => {
+                dispatch({
+                    type: "EDIT_EVENT",
+                    editedEvent: response.data,
+                    id
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Data Unavailable"
+                });
+            });
+    }
 }
 
 export default eventReducer;
