@@ -3,13 +3,12 @@ import axios from "axios";
 //api's ??
 
 const initialEventState = {
-    data:[],
+    data: [],
     loading: true,
     erMsg: ""
-    //fix this to match data coming in.
-} 
+}
 
-eventReducer = (state = initialEventState, action) => {
+const eventReducer = (state = initialEventState, action) => {
     switch (action.type) {
         case "GET_EVENTS": {
             return {
@@ -18,6 +17,9 @@ eventReducer = (state = initialEventState, action) => {
                 data: action.events
             }
         }
+        //create
+        //edit
+        //delete
         default:
             return state;
     }
@@ -26,19 +28,23 @@ eventReducer = (state = initialEventState, action) => {
 export const getEvents = () => {
     return dispatch => {
         axios.get("/events")
-        .then(response => {
-            dispatch({
-                type: "GET_EVENTS",
-                events: response.data
+            .then(response => {
+                dispatch({
+                    type: "GET_EVENTS",
+                    events: response.data
+                });
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    err: "Data Unavailable"
+                });
             });
-        })
-        .catch(err => {
-            dispatch({
-                type: "ERR_MSG",
-                err: "Data Unavailable"
-            });
-        });
     }
+}
+export const deleteEvent = (id) => {
+
+    axios.delete("/events/" + id)
 }
 
 export default eventReducer;
