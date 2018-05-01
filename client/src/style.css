@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+}
+/* 
+font-family: 'Questrial', sans-serif;
+font-family: 'Old Standard TT', serif;
+font-family: 'Quattrocento Sans', sans-serif;
+font-family: 'Fanwood Text', serif;
+ */
+body{
+    background-color: #23F0C7;
+    color: whitesmoke;
+}
+header{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 5%;
+}
+h1{
+    font-family: 'Old Standard TT', serif;
+}
+p{
+    font-family: 'Fanwood Text', serif;
+}
+
+a:-webkit-any-link {
+    color: whitesmoke;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 3px;
+    border-bottom: .75px solid whitesmoke;
+}
+a:hover, .menu:hover{
+    color:#4381C1;
+}
+.menu{
+    border-bottom: .75px solid whitesmoke;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 5px;
+    right: 3px
+}
+/* .menu {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+  }
+  .menu-item {
+    cursor: pointer;
+    padding: 5px;
+    height: 28px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+  }
+  .menu-item:hover {
+    color: #4381C1;
+  } */
+.burger-menu, .burger-menu.open {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  z-index: 9999;
+  background: #DE9151;
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* .burger-menu .bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.4s;
+} */
+
+/* .burger-menu.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.burger-menu.open .bar2 {
+  opacity: 0;
+}
+
+.burger-menu.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+} */
+/* .eventTile{
+    border
+} */
+.deleteButton{
+    background-color: #EF767A;
+}
+.footer{
+    display: flex;
+    justify-content: space-around;
+    color: whitesmoke;
+}
+footer a{
+    text-decoration: none;
+    color: whitesmoke;
+}
