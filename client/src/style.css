@@ -11,8 +11,28 @@ font-family: 'Fanwood Text', serif;
  */
 body{
     background-color: #23F0C7;
-    color: whitesmoke;
+    color: #F5F5F5;
 }
+form{
+    width: 80%;
+    margin: 50px auto;
+}
+label, input{
+    display: inline-block;
+}
+label{
+    width: 70%;
+    text-align: right;
+}
+
+/* label + input{
+    width: 30%;
+    margin: 0 30% 0 4%;
+} */
+/* input + input{
+    float: right;
+} */
+
 header{
     display:flex;
     flex-direction: column;
@@ -26,23 +46,32 @@ h1{
 p{
     font-family: 'Fanwood Text', serif;
 }
-
+.blurb{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 a:-webkit-any-link {
-    color: whitesmoke;
+    color: #F5F5F5;
     cursor: pointer;
     text-decoration: none;
     padding: 3px;
-    border-bottom: .75px solid whitesmoke;
+    border-bottom: 1px solid #FFE347;
 }
 a:hover, .menu:hover{
     color:#4381C1;
 }
 .menu{
-    border-bottom: .75px solid whitesmoke;
+    border-bottom: .75px solid #F5F5F5;
     display: flex;
     flex-direction: row-reverse;
     top: 5px;
-    right: 3px
+    padding-right: 10px
+}
+.bookTitle{
+    margin-top: 20px;
+    
 }
 /* .menu {
     width: 200px;
@@ -68,10 +97,46 @@ a:hover, .menu:hover{
   right: 5px;
   top: 5px;
   z-index: 9999;
-  background: #DE9151;
+  background-image:radial-gradient(circle at top left, #FFE347, #EF767A );
   padding: 15px;
   border-radius: 25px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    height: 63vh;
+    /* flex-flow: column; */
+}
+.eventTile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #FFE347;
+    border-radius: 30px;
+    background: #23F0C7;
+    padding: 5px;
+    /* width: 150px; */
+    height: 20vh;
+    margin: 3px;
+    text-decoration-line: none;
+}
+h5{
+    padding-bottom: 5px;
+}
+button{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #F5F5F5;
+    border-radius: 30px;
+    padding: 5px;
+    width: 40%;
+    margin-bottom: 25px;
+}
+.buttonSection{
+    display: flex;
+    justify-content: space-around;
 }
 
 /* .burger-menu .bar1,
@@ -100,15 +165,21 @@ a:hover, .menu:hover{
 /* .eventTile{
     border
 } */
-.deleteButton{
+/* .deleteButton{
     background-color: #EF767A;
-}
+} */
 .footer{
     display: flex;
     justify-content: space-around;
-    color: whitesmoke;
+    color: #F5F5F5;
+    background-color: #EF767A;
+    position:fixed;
+    width:100%;
+    height:25px;
+    bottom:0px;
 }
 footer a{
     text-decoration: none;
-    color: whitesmoke;
+    color: #F5F5F5;
+    margin-bottom: 3px;
 }

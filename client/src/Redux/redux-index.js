@@ -9,7 +9,7 @@ const globalState = {
     events: eventReducer
 };
 
-const store = createStore(eventReducer, applyMiddleware(thunk));
+const store = createStore(combineReducers(globalState), applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 

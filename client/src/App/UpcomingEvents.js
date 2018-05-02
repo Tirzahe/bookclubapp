@@ -1,27 +1,47 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import EventTile from "./EventTile";
 
-const UpcomingEvents = () => {
-    return(
-    <div className="upcomingEvents">
-            <nav>
-                <a href="./UpcomingEvents.js">UpcomingEvents</a>
-                <a href="./AllEvents.js">2018 Events</a>
-                <a href="./EditEventForm.js">Edit Event</a>
-                <a href="./Form.js">Create New Event</a>
-                <a href="./DeleteEvent.js">Delete/Edit Event</a>
-                <a href="./Landing.js">Landing Page</a>
-            </nav>
-            <h1>Upcoming Events</h1>
-            <button className="eventTile">image here  - Date of event</button>
-            <button className="eventTile">image here  - Date of event</button>
-            <button className="eventTile">image here  - Date of event</button>
-            <button className="newEventButton">Create New Event</button>
-            <button className="editEvent">Edit Event</button>
+const UpcomingEvents = (props) => {
+    const { loading, data, errMsg } = 
+    props.events;
+    if (loading){
+        return <p>Loading...</p>
+    }
+    if (errMsg) {
+        return <p>{errMsg}</p>
+    }
+    const eventTiles = props.events.data.map(event => {
+        return(
+            <EventTile key={event._id}
+            event={event}/>
+        )
+    })
+    return (
+        <div className="upcomingEvents">
+            <header>
+                <h1>Upcoming Events</h1>
+            </header>
+            <main>
+                {eventTiles}
+                {/* {eventTiles} how do I show only the next three calendar events*/}
+            </main>
+            <div className="buttonSection">
+                <Link className="newEventButton">Create New Event</Link>
+                <Link className="editEvent">Edit Event</Link>
+            </div>
             <div className="footer">
-                <a href="./DeleteEvents" className="deleteEvents">Delete/Edit Event</a>
-                <a href="./AllEvents" className="allEvents">2018Events</a>
+                <Link to="/delete-event" className="deleteLink">Delete/Edit Event</Link>
+                <Link to="/all-events" className="allEventsLink">All Events</Link>
             </div>
         </div>
     )
 }
-export default UpcomingEvents;
+const mapToStateToProps = (state) => {
+    return {
+        events: state.events
+    }
+}
+
+export default connect(mapToStateToProps, {})( UpcomingEvents);

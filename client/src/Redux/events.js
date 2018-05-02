@@ -20,7 +20,7 @@ const eventReducer = (state = initialEventState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: state.data.filter(event=>{
+                data: state.data.filter(event => {
                     event._id !== action.id
                 })
             }
@@ -47,7 +47,7 @@ const eventReducer = (state = initialEventState, action) => {
     }
 }
 
-export const createEvent = (inputs) => {
+export const createEvent = (inputs, goToLocation) => {
     return dispatch => {
         axios.post("/events", inputs)
             .then(response => {
@@ -55,6 +55,7 @@ export const createEvent = (inputs) => {
                     type: "CREATE_EVENT",
                     event: response.data
                 });
+                goToLocation("/all-events");
             })
     }
 }

@@ -1,15 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const DeleteEvent = () => {
-    return(
+    return (
         <div className="deleteEvent">
-        <nav>
-                <a href="./UpcomingEvents.js">UpcomingEvents</a>
-                <a href="./AllEvents.js">2018 Events</a>
-                <a href="./EditEventForm.js">Edit Event</a>
-                <a href="./Form.js">Create New Event</a>
-                <a href="./Landing.js">Landing Page</a>
-            </nav>
             <h1>Delete/Edit Event</h1>
             <p>Select an event to edit or delete</p>
             <button className="eventTile">image here  - Date of event</button>
@@ -17,8 +12,8 @@ const DeleteEvent = () => {
             <button className="deleteEventButton">Delete Event</button>
             <button className="editEventButton">Edit Event</button>
             <div className="footer">
-                <a href="./Form" className="newEventLink">Create New Event</a>
-                <a href="./UpcomingEvents" className="upcomingEventsLink">Upcoming Events</a>
+                <Link to="/create-new" className="newEventLink">Create New Event</Link>
+                <Link to="/upcoming-events" className="upcomingLink">Upcoming Events</Link>
             </div>
         </div>
     )

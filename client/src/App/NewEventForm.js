@@ -1,10 +1,77 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { createEvent } from '../redux/events';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-const NewEventForm = () => {
-    return(
-        <div className="form">
-            <h1>FORM HERE</h1>
-        </div>
-    )
+
+class NewEventForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            date: "",
+            host: "",
+            address: "",
+            book: {
+                title: "",
+                author: "",
+                quote: ""
+            }
+        };
+
+    }
+    handleEventChange = (e) => {
+        const { name, value } = e.target;
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                [name]: value
+            }
+        });
+    }
+    handleBookChange = (e) => {
+        const { name, value } = e.target;
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                book: {
+                    ...prevState.book,
+                    [name]: value
+                }
+            }
+        })
+    }
+    handleSubmit = (e) => {
+        e.preventDefault(e);
+        this.props.createEvent(this.state, this.props.history.push);
+    }
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="">Host Name
+                        <input name="host" value={this.state.host} onChange={this.handleEventChange} />
+                    </label>
+                    <label htmlFor="">Event Location
+                        <input name="address" value={this.state.address} onChange={this.handleEventChange} />
+                    </label>
+                    <label htmlFor="">Date
+                        <input name="date" type="text" value={this.state.date} onChange={this.handleEventChange} />
+                    </label>
+                    {/* for date is ther a way to just select from a calendar? */}
+                    <label htmlFor="">Title
+                        <input name="title" type="text" value={this.state.book.title} onChange={this.handleBookChange} />
+                    </label>
+                    <label htmlFor="">Author
+                        <input name="author" type="text" value={this.state.book.author} onChange={this.handleBookChange} />
+                    </label>
+                    <label htmlFor="">Quote
+                        <input name="quote" type="text" value={this.state.book.quote} onChange={this.handleBookChange} />
+                    </label>
+                        <button>Create Event</button>
+                        <Link to="/all-events">Cancel</Link>
+                    </form>
+            </div>
+        );
+    }
 }
-export default NewEventForm;
+export default connect(null, { createEvent })(NewEventForm);

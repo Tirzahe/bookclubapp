@@ -10,17 +10,17 @@ const Nav = () => {
                 position="right top"
                 on="click"
                 closeOnDocumentClick
-                mouseLeaveDelay={300}
+                mouseLeaveDelay={3}
                 mouseEnterDelay={0}
                 contentStyle={{ padding: "0px", border: "none" }}
                 arrow={false}
             >
                 <div className="burger-menu open">
-                    <Link to="/AllEvents" className="menu-item"> All Events</Link>
-                    <Link to="/UpcomingEvents" className="menu-item"> Upcoming Events</Link>
-                    <Link to="/EditEventForm" className="menu-item"> Edit Event</Link>
-                    <Link to="/NewEventForm" className="menu-item"> Create New Event</Link>
-                    <Link to="/DeleteEvent" className="menu-item">Delete/Edit Event</Link>
+                    <Link to="/all-events" className="menu-item">All Events</Link>
+                    <Link to="/" className="menu-item">Upcoming Events</Link>
+                    <Link to="/edit-form" className="menu-item">Edit Event</Link>
+                    <Link to="/create-new" className="menu-item">Create New Event</Link>
+                    <Link to="/delete-event" className="menu-item">Delete Event</Link>
                 </div>
             </Popup>
         
