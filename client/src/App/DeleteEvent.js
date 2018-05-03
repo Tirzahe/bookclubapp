@@ -26,7 +26,6 @@ const DeleteEvent = () => {
             </header>
             <main>
                 {eventTiles}
-                {/* add in toggle and delete functionality */}
             </main>
             <div>
                 <Link to="/all-items" className="deleteEventLink">Delete Event</Link>

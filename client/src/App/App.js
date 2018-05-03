@@ -8,7 +8,7 @@ import NewEventForm from "./NewEventForm";
 import EditForm from "./EditForm";
 import Event from "./Event";
 import Events from "./Events";
-import DeleteEvent from "./DeleteEvent";
+// import DeleteEvent from "./DeleteEvent";
 import HomePage from "./HomePage";
 // import BurgerIcon from "./BurgerIcon";
 // import Popup from "reactjs-popup";
@@ -37,7 +37,7 @@ class App extends Component {
                     <Route exact path="/upcoming-events" render={(props) => <Events pageTitle="Upcoming Events" {...props} component={Events} linkText="All Events" footerLink="/all-events"
                      filterCallback={(event, i) => i < 3} />}></Route>
 
-                    <Route path="/delete-event" component={DeleteEvent}></Route>
+                    {/* <Route path="/delete-event" component={DeleteEvent}></Route> */}
                 </Switch>
             </div>
         )

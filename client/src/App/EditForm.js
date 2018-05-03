@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { editEvent } from '../redux/events';
+import { editEvent } from '../redux/events.js';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from "axios";

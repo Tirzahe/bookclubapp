@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createEvent } from '../redux/events';
+import { createEvent } from '../redux/events.js';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Nav from './Nav';

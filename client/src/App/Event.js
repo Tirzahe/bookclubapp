@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deleteEvent } from '../redux/events';
+import { deleteEvent } from '../redux/events.js';
 import Nav from "./Nav";
 
 const Event = (props) => {
