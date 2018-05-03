@@ -3,7 +3,6 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deleteEvent } from '../redux/events';
-import EditForm from './EditForm';
 import Nav from "./Nav";
 
 const Event = (props) => {

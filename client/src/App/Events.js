@@ -12,7 +12,7 @@ const Events = (props) => {
     if (errMsg) {
         return <p>{errMsg}</p>
     }
-    const eventTiles = props.events.data.sort((eventA, eventB) => {
+    const eventTiles = data.sort((eventA, eventB) => {
         const milsA = new Date(eventA.date).getTime();
         const milsB = new Date(eventB.date).getTime();
         return milsA - milsB;

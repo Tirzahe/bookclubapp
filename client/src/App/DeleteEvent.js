@@ -12,7 +12,7 @@ const DeleteEvent = () => {
         return <p>{errMsg}</p>
     }
     const eventTiles =
-    this.props.events.data.map(event => {
+    data.map(event => {
         return(
         <EventTile key= {event._id}
         event = {event}/>

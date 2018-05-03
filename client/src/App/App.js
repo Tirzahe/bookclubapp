@@ -8,7 +8,6 @@ import NewEventForm from "./NewEventForm";
 import EditForm from "./EditForm";
 import Event from "./Event";
 import Events from "./Events";
-import UpcomingEvents from "./UpcomingEvents";
 import DeleteEvent from "./DeleteEvent";
 import HomePage from "./HomePage";
 // import BurgerIcon from "./BurgerIcon";
