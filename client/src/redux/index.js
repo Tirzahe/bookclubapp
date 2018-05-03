@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import eventReducer from "./events";
+import eventReducer from "./events.js";
 
-import { getEvents } from "./events";
+import { getEvents } from "./events.js";
 
 const globalState = {
     events: eventReducer

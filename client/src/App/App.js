@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { getEvents } from "../redux/events";
+import { getEvents } from "../redux/events.js";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 
