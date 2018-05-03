@@ -1,22 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {connect} from 'react-redux';
+import EventTile from './EventTile';
 
 const DeleteEvent = () => {
+    const { loading, data, errMsg } = this.props.events;
+    if (loading){
+        return <p>Loading...</p>
+    }
+    if (errMsg){
+        return <p>{errMsg}</p>
+    }
+    const eventTiles =
+    this.props.events.data.map(event => {
+        return(
+        <EventTile key= {event._id}
+        event = {event}/>
+        )
+    })
+
     return (
         <div className="deleteEvent">
-            <h1>Delete/Edit Event</h1>
-            <p>Select an event to edit or delete</p>
-            <button className="eventTile">image here  - Date of event</button>
-            {/* all event tiles here */}
-            <button className="deleteEventButton">Delete Event</button>
-            <button className="editEventButton">Edit Event</button>
-            <div className="footer">
-                <Link to="/create-new" className="newEventLink">Create New Event</Link>
-                <Link to="/upcoming-events" className="upcomingLink">Upcoming Events</Link>
+            <header>
+                <h2>Select an event to edit or delete</h2>
+            </header>
+            <main>
+                {eventTiles}
+                {/* add in toggle and delete functionality */}
+            </main>
+            <div>
+                <Link to="/all-items" className="deleteEventLink">Delete Event</Link>
+                    
+                <Link to="/edit-form">Edit Event</Link>
             </div>
+        
         </div>
     )
 }
 
-export default DeleteEvent;
+
+const mapToStateToProps =(state) => {
+    return {
+        events: state.events
+    }
+}
+export default connect(mapToStateToProps)(DeleteEvent);

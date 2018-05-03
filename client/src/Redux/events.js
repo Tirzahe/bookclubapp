@@ -5,7 +5,8 @@ import axios from "axios";
 const initialEventState = {
     data: [],
     loading: true,
-    errMsg: ""
+    errMsg: "",
+    
 }
 
 const eventReducer = (state = initialEventState, action) => {
@@ -20,9 +21,7 @@ const eventReducer = (state = initialEventState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: state.data.filter(event => {
-                    event._id !== action.id
-                })
+                data: state.data.filter(event => event._id !== action.id)
             }
         case "CREATE_EVENT":
             return {
@@ -47,9 +46,10 @@ const eventReducer = (state = initialEventState, action) => {
     }
 }
 
+
 export const createEvent = (inputs, goToLocation) => {
     return dispatch => {
-        axios.post("/events", inputs)
+        axios.post("/api/events", inputs)
             .then(response => {
                 dispatch({
                     type: "CREATE_EVENT",
@@ -62,7 +62,7 @@ export const createEvent = (inputs, goToLocation) => {
 
 export const getEvents = () => {
     return dispatch => {
-        axios.get("/events")
+        axios.get("/api/events")
             .then(response => {
                 dispatch({
                     type: "GET_EVENTS",
@@ -79,7 +79,7 @@ export const getEvents = () => {
 }
 export const deleteEvent = (id) => {
     return dispatch => {
-        axios.delete("/events/" + id)
+        axios.delete("/api/events/" + id)
             .then(response => {
                 dispatch({
                     type: "DELETE_EVENT",
@@ -94,15 +94,16 @@ export const deleteEvent = (id) => {
             });
     }
 }
-export const editEvent = (id, inputs) => {
+export const editEvent = (id, inputs, goToLocation) => {
     return dispatch => {
-        axios.put("/event/" + id, inputs)
+        axios.put("/api/events/" + id, inputs)
             .then(response => {
                 dispatch({
                     type: "EDIT_EVENT",
                     editedEvent: response.data,
                     id
                 })
+                goToLocation("/event/" + id)
             })
             .catch(err => {
                 dispatch({

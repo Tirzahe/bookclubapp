@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { createEvent } from '../redux/events';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import Nav from './Nav';
 
 class NewEventForm extends Component {
     constructor(props) {
@@ -47,11 +47,15 @@ class NewEventForm extends Component {
     render() {
         return (
             <div>
+                <Nav />
+                <header>
+                    <h1>Create New Event</h1>
+                </header>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="">Host Name
+                    <label htmlFor="">Host Name 
                         <input name="host" value={this.state.host} onChange={this.handleEventChange} />
                     </label>
-                    <label htmlFor="">Event Location
+                    <label htmlFor="">Event Location 
                         <input name="address" value={this.state.address} onChange={this.handleEventChange} />
                     </label>
                     <label htmlFor="">Date
@@ -67,8 +71,8 @@ class NewEventForm extends Component {
                     <label htmlFor="">Quote
                         <input name="quote" type="text" value={this.state.book.quote} onChange={this.handleBookChange} />
                     </label>
-                        <button>Create Event</button>
-                        <Link to="/all-events">Cancel</Link>
+                        <button className="createEventButton">Create Event</button>
+                        <Link to="/all-events" className="cancel">Cancel</Link>
                     </form>
             </div>
         );

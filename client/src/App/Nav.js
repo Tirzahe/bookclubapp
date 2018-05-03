@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Popup from "reactjs-popup";
 
 const Nav = () => {
@@ -17,10 +17,9 @@ const Nav = () => {
             >
                 <div className="burger-menu open">
                     <Link to="/all-events" className="menu-item">All Events</Link>
-                    <Link to="/" className="menu-item">Upcoming Events</Link>
-                    <Link to="/edit-form" className="menu-item">Edit Event</Link>
+                    <Link to="/upcoming-events" className="menu-item">Upcoming Events</Link>
                     <Link to="/create-new" className="menu-item">Create New Event</Link>
-                    <Link to="/delete-event" className="menu-item">Delete Event</Link>
+                    <Link to="/" className="menu-item">Log out</Link>
                 </div>
             </Popup>
         
@@ -28,12 +27,3 @@ const Nav = () => {
 }
 
 export default Nav;
-
-{/* <nav>
-    <a href="./UpcomingEvents.js">UpcomingEvents</a>
-    <a href="./AllEvents.js">2018 Events</a>
-    <a href="./EditEventForm.js">Edit Event</a>
-    <a href="./Form.js">Create New Event</a>
-    <a href="./DeleteEvent.js">Delete/Edit Event</a>
-    <a href="./Landing.js">Landing Page</a>
-</nav> */}

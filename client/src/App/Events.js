@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import EventTile from "./EventTile";
+import Nav from "./Nav";
 
 const Events = (props) => {
     const { loading, data, errMsg } = props.events;
@@ -22,19 +23,17 @@ const Events = (props) => {
     })
     return (
         <div className="AllEvents">
+            <Nav />
             <header>
                 <h1>{props.pageTitle}</h1>
             </header>
             <main>
                 {eventTiles}
             </main>
-            <div className="buttonSection">
-                <Link to="/create-new" className="newEventButton ">Create New Event</Link>
-                <Link to="/edit-form" className="editEvent ">Edit Event</Link>
-            </div>
             <div className="footer">
-                <Link to="/upcoming-events" className="upcomingLink">Upcoming Events</Link>
-                <Link to="/delete-event" className="deleteLink">Delete/Edit Event</Link>
+                 <Link to="/create-new" className="newEventButton ">Create New</Link>
+                
+                <Link to={props.footerLink} className="upcomingEvent ">{props.linkText}</Link>
             </div>
         </div>
     )
@@ -46,8 +45,10 @@ const mapToStateToProps = (state) => {
 }
 
 Events.defaultProps = {
-    pageTitle: "Events",
-    filterCallback: () => true
+    pageTitle: "All Events",
+    filterCallback: () => true,
+    footerLink: "/upcoming-events",
+    linkText: "Upcoming Events"
 }
 
 export default connect(mapToStateToProps, {})(Events);

@@ -16,6 +16,9 @@ body{
 form{
     width: 80%;
     margin: 50px auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 label, input{
     display: inline-block;
@@ -24,15 +27,17 @@ label{
     width: 70%;
     text-align: right;
 }
-
-/* label + input{
-    width: 30%;
-    margin: 0 30% 0 4%;
-} */
-/* input + input{
-    float: right;
-} */
-
+.createEventButton{
+    display:relative;
+    margin: 10px auto;
+    margin-left: 110px;  
+}
+.cancel{
+    display:relative;
+    margin: 10px auto;
+    margin-left: 150px;
+    
+}
 header{
     display:flex;
     flex-direction: column;
@@ -40,7 +45,7 @@ header{
     text-align: center;
     margin: 5%;
 }
-h1{
+h1, h2, h3{
     font-family: 'Old Standard TT', serif;
 }
 p{
@@ -73,21 +78,6 @@ a:hover, .menu:hover{
     margin-top: 20px;
     
 }
-/* .menu {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-  }
-  .menu-item {
-    cursor: pointer;
-    padding: 5px;
-    height: 28px;
-    border-bottom: 1px solid rgb(187, 187, 187);
-  }
-  .menu-item:hover {
-    color: #4381C1;
-  } */
 .burger-menu, .burger-menu.open {
   display: flex;
   flex-direction: column;
@@ -105,9 +95,14 @@ a:hover, .menu:hover{
 main{
     display: flex;
     flex-wrap: wrap;
-    height: 63vh;
-    /* flex-flow: column; */
+    height: 75%;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: scroll;
 }
+/* .mainHomePage{
+    background-image: url("img/bookstack.jpeg")
+} */
 .eventTile{
     display: flex;
     flex-direction: column;
@@ -117,8 +112,8 @@ main{
     border-radius: 30px;
     background: #23F0C7;
     padding: 5px;
-    /* width: 150px; */
-    height: 20vh;
+    width: 175px;
+    height: 70px;
     margin: 3px;
     text-decoration-line: none;
 }
@@ -126,6 +121,7 @@ h5{
     padding-bottom: 5px;
 }
 button{
+    background: repeating-radial-gradient(#FFE347, #EF767A );
     display: flex;
     justify-content: space-around;
     border: 1px solid #F5F5F5;
@@ -137,6 +133,7 @@ button{
 .buttonSection{
     display: flex;
     justify-content: space-around;
+    margin: 25px auto;
 }
 
 /* .burger-menu .bar1,
