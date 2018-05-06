@@ -52,28 +52,35 @@ class NewEventForm extends Component {
                     <h1>Create New Event</h1>
                 </header>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="">Host Name 
-                        <input name="host" value={this.state.host} onChange={this.handleEventChange} />
+                    <label htmlFor=""> 
+                        <input name="host" value={this.state.host} onChange={this.handleEventChange} />Host Name
                     </label>
-                    <label htmlFor="">Event Location 
-                        <input name="address" value={this.state.address} onChange={this.handleEventChange} />
+                    <label htmlFor=""> 
+                        <input name="address" value={this.state.address} onChange={this.handleEventChange} />Event Location
                     </label>
-                    <label htmlFor="">Date
-                        <input name="date" type="text" value={this.state.date} onChange={this.handleEventChange} />
+                    <label htmlFor="">
+                        <input name="date" type="text" value={this.state.date} onChange={this.handleEventChange} />Date
                     </label>
                     {/* for date is ther a way to just select from a calendar? */}
-                    <label htmlFor="">Title
-                        <input name="title" type="text" value={this.state.book.title} onChange={this.handleBookChange} />
+                    <label htmlFor="">
+                        <input name="title" type="text" value={this.state.book.title} onChange={this.handleBookChange} />Title
                     </label>
-                    <label htmlFor="">Author
-                        <input name="author" type="text" value={this.state.book.author} onChange={this.handleBookChange} />
+                    <label htmlFor="">
+                        <input name="author" type="text" value={this.state.book.author} onChange={this.handleBookChange} />Author
                     </label>
-                    <label htmlFor="">Quote
-                        <input name="quote" type="text" value={this.state.book.quote} onChange={this.handleBookChange} />
+                    <label htmlFor="">
+                        <input name="quote" className="quote" type="text" value={this.state.book.quote} onChange={this.handleBookChange} />Quote
                     </label>
-                        <button className="createEventButton">Create Event</button>
-                        <Link to="/all-events" className="cancel">Cancel</Link>
-                    </form>
+                    <button className="createEventButton">Create Event
+                    </button>
+                    <Link to="/all-events" className="cancel">Cancel</Link>
+                </form>
+                <div className="footer">
+                    <ul className="footer">
+                        <li>&copy; 2018</li>
+                        <li>By, Tirzah Evangelista</li>
+                    </ul>
+                </div>
             </div>
         );
     }

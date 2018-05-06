@@ -84,6 +84,12 @@ class EditForm extends Component {
                     <button className="createEventButton">Save Edit</button>
                     <Link to="/all-events" className="cancel">Cancel</Link>
                 </form>
+                <div className="footer">
+                    <ul className="footer">
+                        <li>&copy; 2018</li>
+                        <li>By, Tirzah Evangelista</li>
+                    </ul>
+                </div>
             </div>
         );
     }

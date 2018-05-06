@@ -27,10 +27,10 @@ console.log("PROPS:", props);
             <Nav />
             <header>
                 <h1 className="eventDate">{moment(event[0].date).format('MMMM DD')}</h1>
-                <h5 className="hostName">Host: {event[0].host}</h5>
-                <h5 className="eventAddress">{event[0].address}</h5>
+                <h3 className="hostName">Host: {event[0].host}</h3>
+                <h3 className="eventAddress">{event[0].address}</h3>
                 <h1 className="bookTitle">{event[0].book.title}</h1>
-                <h4 className="bookAuthor">Author: {event[0].book.author}</h4>
+                <h2 className="bookAuthor">Author: {event[0].book.author}</h2>
             </header>
             <section>
                 <p className="blurb" >

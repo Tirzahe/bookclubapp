@@ -7,13 +7,9 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import NewEventForm from "./NewEventForm";
 import EditForm from "./EditForm";
 import Event from "./Event";
-import Events from "./Events";
-// import DeleteEvent from "./DeleteEvent";
+import AllEvents from "./AllEvents";
 import HomePage from "./HomePage";
-// import BurgerIcon from "./BurgerIcon";
-// import Popup from "reactjs-popup";
 
-import "../style.css";
 
 class App extends Component {
     componentDidMount() {
@@ -31,13 +27,11 @@ class App extends Component {
 
                     <Route path="/event/:id" component={Event}></Route>
 
-                    <Route path="/all-events" render={(props) => <Events pageTitle="All Events" linkText="Upcoming Events"{...props} component={Events} />}
+                    <Route path="/all-events" render={(props) => <AllEvents pageTitle="All Events" linkText="Upcoming Events"{...props} component={AllEvents} />}
                     ></Route>
 
-                    <Route exact path="/upcoming-events" render={(props) => <Events pageTitle="Upcoming Events" {...props} component={Events} linkText="All Events" footerLink="/all-events"
+                    <Route exact path="/upcoming-events" render={(props) => <AllEvents pageTitle="Upcoming Events" {...props} component={AllEvents} linkText="All Events" footerLink="/all-events"
                      filterCallback={(event, i) => i < 3} />}></Route>
-
-                    {/* <Route path="/delete-event" component={DeleteEvent}></Route> */}
                 </Switch>
             </div>
         )

@@ -3,53 +3,71 @@
     box-sizing: border-box;
     font-family: 'Questrial', sans-serif;
 }
-/* 
-font-family: 'Questrial', sans-serif;
-font-family: 'Old Standard TT', serif;
-font-family: 'Quattrocento Sans', sans-serif;
-font-family: 'Fanwood Text', serif;
- */
 body{
     background-color: #23F0C7;
     color: #F5F5F5;
 }
 form{
-    width: 80%;
-    margin: 50px auto;
+    /* border: 1px solid green; */
+    width: 70%;
+    margin: auto;
     display:flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 label, input{
+    /* border: 1px solid hotpink; */
     display: inline-block;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    color: #4381C1;
+}
+input{
+    resize: height;
+    overflow: auto;
+    background-color: transparent;
+    border-bottom: 3px solid #FFE347;
 }
 label{
-    width: 70%;
+    /* border: .5px solid blue; */
+    width: 75%;
     text-align: right;
 }
 .createEventButton{
     display:relative;
-    margin: 10px auto;
-    margin-left: 110px;  
+    margin: 20px auto;
+    width: 70%;
+    color: #F5F5F5;
 }
 .cancel{
     display:relative;
-    margin: 10px auto;
-    margin-left: 150px;
-    
+    margin: 0px auto 75px;
+    font-size: 2em;    
 }
 header{
     display:flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: 5%;
+    margin: 3%;
 }
 h1, h2, h3{
     font-family: 'Old Standard TT', serif;
 }
+h1{
+    font-size: 4em;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em;
+}
 p{
     font-family: 'Fanwood Text', serif;
+    font-size: 2em;
 }
 .blurb{
     padding: 20px;
@@ -62,21 +80,25 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
     padding: 3px;
-    border-bottom: 1px solid #FFE347;
+    border-bottom: 3px solid #FFE347;
 }
+
 a:hover, .menu:hover{
     color:#4381C1;
 }
 .menu{
-    border-bottom: .75px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
     display: flex;
     flex-direction: row-reverse;
-    top: 5px;
-    padding-right: 10px
+    top: 15px;
+    padding-right: 20px;
+    font-size: 25px;
+}
+.menu-item{
+    font-size: 20px;
 }
 .bookTitle{
-    margin-top: 20px;
-    
+    margin-top: 40px;
 }
 .burger-menu, .burger-menu.open {
   display: flex;
@@ -84,20 +106,21 @@ a:hover, .menu:hover{
   text-decoration: none;
   cursor: pointer;
   position: fixed;
-  right: 5px;
-  top: 5px;
+  right: 10px;
+  top: 10px;
   z-index: 9999;
   background-image:radial-gradient(circle at top left, #FFE347, #EF767A );
-  padding: 15px;
-  border-radius: 25px;
+  padding: 20px;
+  border-radius: 30px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 main{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     height: 75%;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     overflow: scroll;
 }
 /* .mainHomePage{
@@ -108,27 +131,28 @@ main{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border: 1px solid #FFE347;
+    border: 3px solid #FFE347;
     border-radius: 30px;
     background: #23F0C7;
     padding: 5px;
-    width: 175px;
-    height: 70px;
-    margin: 3px;
+    width: 250px;
+    height: 150px;
+    margin: 5px;
     text-decoration-line: none;
 }
-h5{
+h4{
     padding-bottom: 5px;
 }
 button{
-    background: repeating-radial-gradient(#FFE347, #EF767A );
+    background: repeating-radial-gradient(#ffe347, #EF767A );
     display: flex;
     justify-content: space-around;
     border: 1px solid #F5F5F5;
     border-radius: 30px;
     padding: 5px;
-    width: 40%;
     margin-bottom: 25px;
+    font-size: 30px;
+    color: #F5F5F5;
 }
 .buttonSection{
     display: flex;
@@ -136,6 +160,33 @@ button{
     margin: 25px auto;
 }
 
+.footer{
+    display: flex;
+    justify-content: space-around;
+    color: #F5F5F5;
+    background-color: #EF767A;
+    position:fixed;
+    width:100%;
+    height:60px;
+    bottom:0px;
+    padding: 10px;
+    list-style: none;
+    font-size: 1.5em;
+}
+.footer li{
+    font-size: .75em;
+}
+.footer a{
+    padding-bottom: 20px;
+    /* font-size: 1.25em; */
+}
+footer a{
+    text-decoration: none;
+    color: #F5F5F5;
+    margin-bottom: 3px;
+}
+
+/* CODE BELOW NOTE CURRENTLY IN USE */
 /* .burger-menu .bar1,
 .bar2,
 .bar3 {
@@ -165,18 +216,3 @@ button{
 /* .deleteButton{
     background-color: #EF767A;
 } */
-.footer{
-    display: flex;
-    justify-content: space-around;
-    color: #F5F5F5;
-    background-color: #EF767A;
-    position:fixed;
-    width:100%;
-    height:25px;
-    bottom:0px;
-}
-footer a{
-    text-decoration: none;
-    color: #F5F5F5;
-    margin-bottom: 3px;
-}

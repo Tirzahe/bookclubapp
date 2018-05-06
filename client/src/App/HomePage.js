@@ -13,7 +13,7 @@ const HomePage = ({ event }) => {
 
             </main>
             <footer className="footer">
-                <Link to="/upcoming-events" className="upcomingEventLink">Login</Link>
+                <Link to="/upcoming-events" className="upcomingEventLink">Upcoming Events</Link>
             </footer>
         </div>
     )

@@ -10,7 +10,7 @@ const Nav = () => {
                 position="right top"
                 on="click"
                 closeOnDocumentClick
-                mouseLeaveDelay={3}
+                mouseLeaveDelay={0}
                 mouseEnterDelay={0}
                 contentStyle={{ padding: "0px", border: "none" }}
                 arrow={false}
