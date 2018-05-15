@@ -13,7 +13,6 @@ eventRouter.route("/")
                 res.status(200).send(foundEvents)
             });
     })
-    // get one
     //post-create
     .post((req, res) => {
         const newEvent = new EventModel(req.body);
