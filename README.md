@@ -2,7 +2,7 @@
 
 Book Club App - Tirzah Evangelista
 
-This is an app for Book Club members to create & follow club events and comment on the books they are reading. Sometimes you just can't wait for 3 weeks to share your thoughts about what you are reading.
+This is an app for Book Club members to create & follow club events and comment/discuss the books they are reading.
 
 ## MVP USER STORIES: 
 <!-- EVENTS:  -->
