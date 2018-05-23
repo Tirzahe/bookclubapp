@@ -4,8 +4,8 @@
     font-family: 'Questrial', sans-serif;
 }
 body{
-    background-color: #23F0C7;
-    color: #F5F5F5;
+    color: #23F0C7;
+    background-color: #F5F5F5;
 }
 form{
     /* border: 1px solid green; */
@@ -28,7 +28,7 @@ input{
     resize: height;
     overflow: auto;
     background-color: transparent;
-    border-bottom: 3px solid #FFE347;
+    border-bottom: 3px solid #4381C1;
 }
 label{
     /* border: .5px solid blue; */
@@ -42,9 +42,9 @@ label{
     color: #F5F5F5;
 }
 .cancel{
-    display:relative;
-    margin: 0px auto 75px;
-    font-size: 2em;    
+    display: relative;
+    margin: 0px auto 65px;
+    font-size: 2em; 
 }
 header{
     display:flex;
@@ -71,6 +71,7 @@ p{
 }
 .blurb{
     padding: 20px;
+    margin-bottom: 65px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -80,11 +81,11 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
     padding: 3px;
-    border-bottom: 3px solid #FFE347;
+    border-bottom: none;
 }
 
 a:hover, .menu:hover{
-    color:#4381C1;
+    color:#EF767A;
 }
 .menu{
     border-bottom: 1px solid #F5F5F5;
@@ -109,7 +110,7 @@ a:hover, .menu:hover{
   right: 10px;
   top: 10px;
   z-index: 9999;
-  background-image:radial-gradient(circle at top left, #FFE347, #EF767A );
+  background-image:radial-gradient(circle at top left, #23F0C7, #EF767A );
   padding: 20px;
   border-radius: 30px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -131,7 +132,7 @@ main{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border: 3px solid #FFE347;
+    border: none;
     border-radius: 30px;
     background: #23F0C7;
     padding: 5px;
@@ -144,7 +145,7 @@ h4{
     padding-bottom: 5px;
 }
 button{
-    background: repeating-radial-gradient(#ffe347, #EF767A );
+    background: #EF767A;
     display: flex;
     justify-content: space-around;
     border: 1px solid #F5F5F5;
@@ -164,7 +165,7 @@ button{
     display: flex;
     justify-content: space-around;
     color: #F5F5F5;
-    background-color: #EF767A;
+    background-color: #23F0C7;
     position:fixed;
     width:100%;
     height:60px;

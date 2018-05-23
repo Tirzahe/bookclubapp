@@ -114,4 +114,6 @@ export const editEvent = (id, inputs, goToLocation) => {
     }
 }
 
+
+
 export default eventReducer;

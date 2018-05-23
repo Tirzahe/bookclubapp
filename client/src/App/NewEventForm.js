@@ -73,7 +73,7 @@ class NewEventForm extends Component {
                     </label>
                     <button className="createEventButton">Create Event
                     </button>
-                    <Link to="/all-events" className="cancel">Cancel</Link>
+                    <Link to="/all-events" className="cancel"><button>Cancel</button></Link>
                 </form>
                 <div className="footer">
                     <ul className="footer">
