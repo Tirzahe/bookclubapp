@@ -5,8 +5,7 @@ import axios from "axios";
 const initialEventState = {
     data: [],
     loading: true,
-    errMsg: "",
-    
+    errMsg: ""
 }
 
 const eventReducer = (state = initialEventState, action) => {
