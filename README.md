@@ -3,6 +3,7 @@
 Book Club App - Tirzah Evangelista
 
 This is an app for Book Club members to create & follow club events and comment/discuss the books they are reading.
+[see it live:](https://t-bookclub-app.herokuapp.com/)
 
 ## MVP USER STORIES: 
 <!-- EVENTS:  -->
