@@ -4,7 +4,7 @@
     font-family: 'Questrial', sans-serif;
 }
 body{
-    color: #23F0C7;
+    color: #000000;
     background-color: #F5F5F5;
 }
 form{
@@ -110,7 +110,7 @@ a:hover, .menu:hover{
   right: 10px;
   top: 10px;
   z-index: 9999;
-  background-image:radial-gradient(circle at top left, #23F0C7, #EF767A );
+  background-image:radial-gradient(circle at top left, #000000, #EF767A );
   padding: 20px;
   border-radius: 30px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
@@ -134,7 +134,7 @@ main{
     text-align: center;
     border: none;
     border-radius: 30px;
-    background: #23F0C7;
+    background: #000000;
     padding: 5px;
     width: 250px;
     height: 150px;
@@ -165,7 +165,7 @@ button{
     display: flex;
     justify-content: space-around;
     color: #F5F5F5;
-    background-color: #23F0C7;
+    background-color: #000000;
     position:fixed;
     width:100%;
     height:60px;
