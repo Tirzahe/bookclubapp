@@ -9,6 +9,8 @@ import EditForm from "./EditForm";
 import Event from "./Event";
 import EventTiles from "./EventTiles";
 import HomePage from "./HomePage";
+import AllEvents from './AllEvents';
+import UpcomingEvents from './UpcomingEvents';
 
 
 class App extends Component {
@@ -27,11 +29,10 @@ class App extends Component {
 
                     <Route path="/event/:id" component={Event}></Route>
 
-                    <Route path="/all-events" render={(props) => <EventTiles pageTitle="All Events" linkText="Upcoming Events"{...props} component={EventTiles} />}
+                    <Route path="/all-events" render={AllEvents}
                     ></Route>
 
-                    <Route exact path="/upcoming-events" render={(props) => <EventTiles pageTitle="Upcoming Events" {...props} component={EventTiles} linkText="All Events" footerLink="/all-events"
-                     filterCallback={(event, i) => i < 3} />}></Route>
+                    <Route exact path="/upcoming-events" render={UpcomingEvents}></Route>
                      {/* filterCallback={((event, i) => i < 3) && (i => Date.now())} />}></Route> */}
                 </Switch>
             </div>
