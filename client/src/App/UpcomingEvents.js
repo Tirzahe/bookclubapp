@@ -1,4 +1,5 @@
 import React from 'react';
+import EventTiles from './EventTiles.js';
 
 export default (props) => <EventTiles 
     pageTitle="Upcoming Events" 
