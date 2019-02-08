@@ -7,7 +7,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import NewEventForm from "./NewEventForm";
 import EditForm from "./EditForm";
 import Event from "./Event";
-import AllEvents from "./AllEvents";
+import EventTiles from "./EventTiles";
 import HomePage from "./HomePage";
 
 
@@ -27,11 +27,12 @@ class App extends Component {
 
                     <Route path="/event/:id" component={Event}></Route>
 
-                    <Route path="/all-events" render={(props) => <AllEvents pageTitle="All Events" linkText="Upcoming Events"{...props} component={AllEvents} />}
+                    <Route path="/all-events" render={(props) => <EventTiles pageTitle="All Events" linkText="Upcoming Events"{...props} component={EventTiles} />}
                     ></Route>
 
-                    <Route exact path="/upcoming-events" render={(props) => <AllEvents pageTitle="Upcoming Events" {...props} component={AllEvents} linkText="All Events" footerLink="/all-events"
+                    <Route exact path="/upcoming-events" render={(props) => <EventTiles pageTitle="Upcoming Events" {...props} component={EventTiles} linkText="All Events" footerLink="/all-events"
                      filterCallback={(event, i) => i < 3} />}></Route>
+                     {/* filterCallback={((event, i) => i < 3) && (i => Date.now())} />}></Route> */}
                 </Switch>
             </div>
         )

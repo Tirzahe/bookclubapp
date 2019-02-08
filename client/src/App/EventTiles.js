@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import EventTile from "./EventTile";
 import Nav from "./Nav";
 
-const AllEvents = (props) => {
+const EventTiles = (props) => {
     const { loading, data, errMsg } = props.events;
     if (loading) {
         return <p>Loading...</p>
@@ -22,7 +22,7 @@ const AllEvents = (props) => {
         )
     })
     return (
-        <div className="AllEvents">
+        <div className="EventTiles">
             <Nav />
             <header>
                 <h1>{props.pageTitle}</h1>
@@ -44,11 +44,11 @@ const mapToStateToProps = (state) => {
     }
 }
 
-AllEvents.defaultProps = {
+EventTiles.defaultProps = {
     pageTitle: "All Events",
     filterCallback: () => true,
     footerLink: "/upcoming-events",
     linkText: "Upcoming Events"
 }
 
-export default connect(mapToStateToProps, {})(AllEvents);
+export default connect(mapToStateToProps, {})(EventTiles);
