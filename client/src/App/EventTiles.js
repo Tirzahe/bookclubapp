@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import EventTile from "./EventTile";
 import Nav from "./Nav";
 
+//TODO stop caring about redux and take your events as a
+// direct prop
+
 const EventTiles = (props) => {
     const { loading, data, errMsg } = props.events;
     if (loading) {

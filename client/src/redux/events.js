@@ -71,7 +71,7 @@ export const getEvents = () => {
             .catch(err => {
                 dispatch({
                     type: "ERR_MSG",
-                    errMsg: "Data Unavailable"
+                    errMsg: "Event Info Unavailable"
                 });
             });
     }
