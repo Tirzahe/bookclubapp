@@ -33,7 +33,6 @@ class App extends Component {
                     ></Route>
 
                     <Route exact path="/upcoming-events" render={UpcomingEvents}></Route>
-                     {/* filterCallback={((event, i) => i < 3) && (i => Date.now())} />}></Route> */}
                 </Switch>
             </div>
         )

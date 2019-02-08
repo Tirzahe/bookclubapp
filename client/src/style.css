@@ -110,7 +110,7 @@ a:hover, .menu:hover{
   right: 10px;
   top: 10px;
   z-index: 9999;
-  background-image:radial-gradient(circle at top left, #000000, #EF767A );
+  background-color:black;
   padding: 20px;
   border-radius: 30px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
